@@ -100,7 +100,7 @@ func (c *cassandraConnectionProducer) Initialize(ctx context.Context, req dbplug
 		c.TLS = true
 
 	case len(c.PemBundle) != 0:
-		parsedCertBundle, err = certutil.ParsePEMBundle(c.PemBundle)
+		parsedCertBundle, err = ParsePEMBundle(c.PemBundle)
 		if err != nil {
 			return fmt.Errorf("error parsing the given PEM information: %w", err)
 		}
